@@ -4,12 +4,12 @@
   </head>
   <body>
     <header>
-      <% include ./partials/header %>
+      <% include ./partials/navbar %>
     </header>
     <div class="container">
-      <% var url = "/videogames/" + videogames.id + "?_method=PUT" %>
+      <% var url = "/videogames/" + videogame.id + "?_method=PUT" %>
       <form method="POST" action=<%= url %> >
-        <input required name="title" value=<%= videogames.title %> />
+        <input required name="title" value=<%= videogame.title %> />
         <a href="/videogames" class="btn red">Cancel</a>
         <button class="btn">Save</button>
      </form>

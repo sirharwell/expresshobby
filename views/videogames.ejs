@@ -5,13 +5,13 @@
  </head>
  <body>
    <header>
-     <% include ./partials/header %>
+     <% include ./partials/navbar %>
    </header>
-   <h1 class='center'>My Games</h1>
+   <h1 class='center'>My Videogames</h1>
    <hr />
    <div class='row'>
      <div class='col s12 m4'>
-       <h3>Add Games</h3>
+       <h3>Add Videogame</h3>
        <form action='/videogames' method='post'>
          <input type='text' name='title' placeholder='Title' />
          <button class='btn btn-waves' type='submit'>Add</button>
@@ -24,12 +24,13 @@
          <th>x</th>
        </thead>
        <tbody>
-         <% videogames.forEach( function(videogames) { %>
+         <% videogames.forEach( function(videogame) { %>
            <tr>
-             <td><%= videogames.title %></td>
-             <% var url = "/movies/" + movie.id + "?_method=DELETE" %>
+             <td><%= videogame.title %></td>
+             <% var url = "/videogames/" + videogame.id + "?_method=DELETE" %>
+             <% var editUrl = "videogames/" + videogame.id + "/edit" %>
 <tr>
-  <td><%= videogames.title %></td>
+  <td><%= videogame.title %></td>
   <td>
     <a class="btn" href=<%= editUrl %>>Edit</a>
   </td>
